@@ -1,49 +1,33 @@
-import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Task = (props) => {
-    return (
-        <View style={styles.item}>
-            <View style={styles.itemLeft}>
-                <TouchableOpacity style={styles.square}></TouchableOpacity>
-                <Text>{props.text}</Text>
-            </View>
-            <View style={styles.circle}></View>
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import DetailProduct from './DetailProduct';
+
+function HomeScreen({ navigation }) {
+    return(
+        <View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
+          <TouchableOpacity  onPress={()=>{
+            navigation.navigate('DetailProduct')
+          }}>
+          <Text>Your Order</Text>
+          </TouchableOpacity>
         </View>
+      )
+}
+const Stack = createNativeStackNavigator();
+function Task() {
+    return (
+    <Stack.Navigator initialRouteName="Your order">
+        <Stack.Screen name="Your order" component={HomeScreen} />
+        <Stack.Screen name="DetailProduct" component={DetailProduct} />
+    </Stack.Navigator>
     );
-};
+  }
+  export default Task;
+  
 
-const styles = StyleSheet.create({
-    item: {
-        backgroundColor: "#FFF",
-        padding: 15,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        borderRadius: 15,
-        marginBottom: 20,
-    },
-    square: {
-        width: 24,
-        height: 24,
-        backgroundColor: "#55BCF6",
-        opacity: 0.4,
-        borderRadius: 5,
-        marginRight: 15,
-    },
-    itemLeft: {
-        flexDirection: "row",
-    },
-    itemText: {
-        maxWidth: "80%",
-    },
-    circle: {
-        height: 12,
-        width: 14,
-        backgroundColor: "#55BCF6",
-        borderRadius: 5,
-        borderWidth: 2,
-    },
-});
 
-export default Task;
+
+const styles = StyleSheet.create({})
