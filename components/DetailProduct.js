@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import {
     StyleSheet,
     Text,
@@ -22,15 +22,25 @@ export default function DetailProduct() {
 
             <View style={styles.body}>
                 <MapView
-                    provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+                    provider={PROVIDER_GOOGLE}
                     style={styles.map}
                     region={{
-                        latitude: 37.78825,
-                        longitude: -122.4324,
+                        latitude: 16.062502,
+                        longitude: 108.241994,
                         latitudeDelta: 0.015,
                         longitudeDelta: 0.0121,
                     }}
+                    showsUserLocation={false}
+                    zoomEnabled={true}
+                    zoomControlEnabled={true}
                 >
+                    <Marker
+                        coordinate={{ latitude: 16.062502, longitude: 108.241994 }}
+                        title={"Lyly-Restaurant"}
+                        description={"64-74 Tô Hiến Thành, Phước Mỹ, Sơn Trà, Đà Nẵng-Việt Nam"}
+                    >
+
+                    </Marker>
                 </MapView>
             </View>
         </View>
@@ -65,13 +75,13 @@ const styles = StyleSheet.create({
     },
 
     body: {
-        
+
         height: 200,
         width: 500,
         justifyContent: 'flex-end',
         alignItems: 'center',
-      },
-      map: {
+    },
+    map: {
         ...StyleSheet.absoluteFill,
-      },
+    },
 });

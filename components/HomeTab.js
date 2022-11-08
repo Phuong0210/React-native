@@ -32,7 +32,7 @@ function HomeScreen({ navigation}) {
   const [listProducts, setListProducts] = useState([
     {
       id:0,
-      name:'Accu-check Active Test Strip',
+      name:'Caca',
       img: require('./image/ca.jpg'),
       price:'112'
     },
@@ -53,7 +53,31 @@ function HomeScreen({ navigation}) {
       name:'Omron HEM-8712 BP Monitor',
       img: require('./image/thitbo.jpg'),
       price:'150'
-    }
+    },
+    {
+    id:4,
+    name:'Sugar Substitute',
+    img:require('./image/banhmi.jpg'),
+    price:''
+  },
+  {
+    id:5,
+    name:'Juices & Vinegars',
+    img:require('./image/ca.jpg'),
+    price:''
+  },
+  {
+    id:6,
+    name:'Vitamins Medicines',
+    img: require('./image/chickenrice.jpg'),
+    price:''
+  },
+  {
+    id:7,
+    name:'Vitamins Medicines',
+    img:require('./image/thitbo.jpg'),
+    price:''
+  }
   ]);
   return(
     <View style={styles.container}>

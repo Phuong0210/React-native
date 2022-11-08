@@ -7,6 +7,7 @@ import HomeTab from './components/HomeTab';
 import Task from './components/Task';
 import MeMap from './components/MeMap';
 
+
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -52,7 +53,8 @@ function MyTabs() {
           ),
         headerShown: false,
         }}
-      />
+        />
+      
     </Tab.Navigator>
   );
 }
