@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeTab from './components/HomeTab';
 import Task from './components/Task';
 import MeMap from './components/MeMap';
+import Products from './components/Prodcuts';
 
 
 const Tab = createBottomTabNavigator();
@@ -48,6 +49,20 @@ function MyTabs() {
           tabBarIcon: ({color, size}) => (
             <Image
               source={require('../phuong/components/image/map.png')}
+              style={{width: 26, height: 30, }}
+            />
+          ),
+        headerShown: false,
+        }}
+        />
+        <Tab.Screen
+        name="Products"
+        component={Products}
+        options={{
+          tabBarLabel: 'Products',
+          tabBarIcon: ({color, size}) => (
+            <Image
+              source={require('../phuong/components/image/notification.png')}
               style={{width: 26, height: 30, }}
             />
           ),
